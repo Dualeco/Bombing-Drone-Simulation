@@ -41,7 +41,7 @@ public class SwingExplosion extends JFrame implements ActionListener, KeyListene
         JFrame game = new SwingExplosion();
         game.setResizable(false);
         game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        game.setTitle("Explosionsk");
+        game.setTitle("Explosions");
         game.setSize(DEFAULT_WINDOW_SIZE);
         game.setMinimumSize(DEFAULT_WINDOW_SIZE);
         game.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width - game.getWidth()) / 2,
