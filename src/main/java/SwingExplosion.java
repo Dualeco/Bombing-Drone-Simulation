@@ -393,7 +393,7 @@ public class SwingExplosion extends JFrame implements ActionListener, KeyListene
 
         private void setCloudPixel(BufferedImage cloudBuffer, int i, int j, BufferedImage newBuffer, double alpha, int x, int y, int r) {
             double a = Math.exp(-Math.pow(Math.pow(2 * (i - x) / (double) r, 2) + Math.pow(2 * (j - y) / (double) r, 2) - 2, 2));
-            int ah = (int) (fogHeight * 255 / 2);
+            int ah = (int) ((255  + 255 * fogHeight) / 2);
             int white = argb(ah, 255, 255, 255);
 
             int oldArgb = cloudBuffer.getRGB(i, j);
@@ -483,7 +483,7 @@ public class SwingExplosion extends JFrame implements ActionListener, KeyListene
             if (0 <= i && i < w && 0 <= j && j < h) {
                 return mergeColors(b1.getRGB(i, j), b2.getRGB(i, j));
             }
-            return 0;
+            return (w == b1.getWidth()) ? b1.getRGB(i, j) : b2.getRGB(i, j);
         }
 
             private int gauss ( int i, int j, BufferedImage bi){
